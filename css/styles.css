@@ -54,7 +54,7 @@ p,h1,h2,h3,h4,h5{
     width: 80%;
     justify-content: space-evenly;
 }
-.achtergrond{
+.background{
     background-color:#4b4c60;
     color: white;
 }
@@ -65,10 +65,10 @@ p,h1,h2,h3,h4,h5{
 body{
     font-family: 'Work Sans', sans-serif;
 }
-.verkleinen{
+.smaller{
     height: 4.375rem;
 }
-.textkleiner{
+.textsmaller{
     max-width: 31.25rem;
 }
 .container

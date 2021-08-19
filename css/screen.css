@@ -27,9 +27,9 @@
     --global-color-neutral-xx-dark: #4b4c60;
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
-    --color-bitcoin: #ff914c;
-    --color-ethereum: #4F95FF ;
-    --color-litecoin: #606274;
+    --global-color-bitcoin: #ff914c;
+    --global-color-ethereum: #4F95FF ;
+    --global-color-litecoin: #606274;
     /* opacity */
     --global-muted-opacity:.6;
     /* transitions */
@@ -207,14 +207,14 @@ li ol {
 }
 .c-data__line
 {
-    border-top: 1px solid var(--color-front);
+    border-top: var(--global-borderWidth) solid var(--color-front);
     display: grid;
     justify-content: space-between;
     padding-top: 0.5rem;
     margin-bottom: 1.25rem;  
 }
 .c-logo{
-    fill:var(--color-bitcoin);
+    fill:var(--global-color-bitcoin);
 }
  .c-logo {
     font-size: var(--global-input-fontsize);
@@ -245,18 +245,18 @@ li ol {
     margin-left: -1rem;
     margin-right: -1rem;
     color: var(--color-front);
-    background-color: var(--color-bitcoin);
+    background-color: var(--global-color-bitcoin);
 }
 .c-data__header--bitcoin {
-    background-color: var(--color-bitcoin);
+    background-color: var(--global-color-bitcoin);
 }
 
 .c-data__header--ethereum {
-    background-color: var(--color-ethereum);
+    background-color: var(--global-color-ethereum);
 }
 
 .c-data__header--litecoin {
-    background-color: var(--color-litecoin);
+    background-color: var(--global-color-litecoin);
 }
 .c-data_value{
     margin-left: 0.5rem;
@@ -288,7 +288,7 @@ li ol {
 .c-card
 {
     background-color: var(--white);
-    border: 1px solid var(--color-front);
+    border: var(--global-borderWidth) solid var(--color-front);
     width: 100%;
     height: 80%;
     border-radius: 0.75rem;
@@ -347,7 +347,7 @@ justify-content: center;
         transition: var(--global-transition-alpha);  
         opacity: 0  ;
         display: block;
-        fill:var(--global-color-neutral-xx-dark);
+        fill:var(--color-dark);
         display: flex;
         align-items: center;
         justify-content: center;
