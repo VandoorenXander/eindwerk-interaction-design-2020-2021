@@ -10,7 +10,6 @@
     /* colors */
     --color-light: #E3E4DE;
     --color-dark: #4b4c60;
-
     --color-front: var(--color-dark);
     --color-back: var(--color-light);
     --global-color-alpha: #3385FF;
@@ -18,7 +17,6 @@
     --global-color-alpha-x-dark: #1B4186;
     --global-color-alpha-transparent: #3385ffbf;
     --global-color-alpha-x-transparent: #3385ff4d;
-
     --global-color-neutral-xxxx-light: #F5F6FA;
     --global-color-neutral-xxx-light: #E2E3E7;
     --global-color-neutral-xx-light: #caccd4;
@@ -43,7 +41,7 @@
 
     /*sizes */
     --global-input-fontsize:1rem;
- 
+    --global-input-font:4rem;
 
     /* border stuff */
     --global-borderRadius: 3px;
@@ -72,7 +70,7 @@
 html {
     font-size: var(--global-input-fontsize);
     line-height: 1.5;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Inter-UI', sans-serif;
     box-sizing: border-box;
     color:  var(--color-front);
     background-color: var(--color-back);
@@ -87,16 +85,9 @@ html {
     box-sizing: inherit;
 }
 
-/*
-* Remove text-shadow in selection highlight:
-* https://twitter.com/miketaylr/status/12228805301
-*
-* Customize the background color to match your design.
-*/
-
 ::selection {
-    background: var(--color-front); /* kleur van selectie*/
-    color: var(--color-back); /* tekst kleur */
+    background: var(--color-front);
+    color: var(--color-back);
     text-shadow: none;
 }
 
@@ -179,41 +170,6 @@ li ol {
 #OBJECTS
 \*------------------------------------*/
 
-/*
-    Object: Button reset
-    ---
-    Small button reset object
-*/
-
-/* .o-button-reset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-
-    /* inherit font & color from ancestor */
-    /* color: inherit;
-    font: inherit; */
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    /* line-height: normal; */
-
-    /* Corrects font smoothing for webkit */
-    /* -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit; */
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    /* -webkit-appearance: none;
-} */ 
-
-/*
-    Object: Hide accessible
-    ---
-    Accessibly hide any element
-*/
-
 .o-hide-accessible {
     position: absolute;
     width: 1px;
@@ -229,25 +185,8 @@ li ol {
 #COMPONENTS
 \*------------------------------------*/
 
-/*
-    Component: Logo
-    ---
-    Website main logo
-*/
-
-.c-logo {
-    font-size: var(--global-input-fontsize);
-    line-height: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.c-logo .c-coin {
-    margin-right: 0.5rem;
-}
-
 .c-app{
-    max-width: 400px;
+    width: 400px;
     padding: 2em;
     margin: 0 auto;
     display: flex;
@@ -272,14 +211,20 @@ li ol {
     display: grid;
     justify-content: space-between;
     padding-top: 0.5rem;
-    margin-bottom: 1.25rem;
-    
+    margin-bottom: 1.25rem;  
 }
 .c-logo{
     fill:var(--color-bitcoin);
 }
-
-
+ .c-logo {
+    font-size: var(--global-input-fontsize);
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+} 
+.c-logo .c-coin {
+    margin-right: 0.5rem;
+}
 .c-data__headername{
     margin: 0;
     font-size: 1.5rem;
@@ -301,9 +246,6 @@ li ol {
     margin-right: -1rem;
     color: var(--color-front);
     background-color: var(--color-bitcoin);
-}
-.chartcontent{
-    height: 500px;
 }
 .c-data__header--bitcoin {
     background-color: var(--color-bitcoin);
@@ -402,7 +344,7 @@ justify-content: center;
 }
 
 .c-switch-option__symbol {
-        transition: 0.1s ease;  
+        transition: var(--global-transition-alpha);  
         opacity: 0  ;
         display: block;
         fill:var(--global-color-neutral-xx-dark);
@@ -413,7 +355,7 @@ justify-content: center;
 }
 
 .c-switch-option__symbol {
-    transition: 0.1s ease;  
+    transition: var(--global-transition-alpha);  
     opacity: 0.4  ;
     display: block;
 }
@@ -430,8 +372,22 @@ justify-content: center;
 /*------------------------------------*\
 #MEDIA
 \*------------------------------------*/
-
-@media(min-width:40rem){
+@media (max-width: 992px){
+.c-app{
+        width: 400px;
+        padding: 2em;
+        margin: 0 auto;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+    }
+.c-datehit{
+    display:none;
+}
+.c-logo {
+display:none;
+} 
 }
 
 

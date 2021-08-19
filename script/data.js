@@ -63,13 +63,9 @@ const Percentage=async (currency)=>
 	document.querySelector(".js-percentage").innerHTML= perc;
 }
 function _parseMillisecondsIntoReadableTime(timestamp) {
-	//Get hours from milliseconds
 	const date = new Date(timestamp * 1000);
-	// Hours part from the timestamp
 	const hours = '0' + date.getHours();
-	// Minutes part from the timestamp
 	const minutes = '0' + date.getMinutes();
-	// Will display time in 10:30(:23) format
 	return hours.substr(-2) + ':' + minutes.substr(-2);
 }
 const candles = async (currency,i) =>{
@@ -83,8 +79,8 @@ const candles = async (currency,i) =>{
 	let prices=[];
 	let dates=[];
 	var d = new Date();
- 	d.setDate(d.getDate()-3);
-	const data = await fetch(`https://api.pro.coinbase.com/products/${currency}/candles?start=${d}&end=${Date()}&granularity=21600`)
+ 	d.setDate(d.getDate()-7);
+	const data = await fetch(`https://api.pro.coinbase.com/products/${currency}/candles?start=${d}&end=${Date()}&granularity=86400`)
 	.then((r) => r.json())
 	.catch((err) => console.error('an error'));
 	console.log(data);
@@ -109,7 +105,16 @@ const candles = async (currency,i) =>{
 			}]
 		},
 		options:{
-			responsive: true
+			responsive: true,
+			plugins:{
+				legend:{
+					labels:{
+						font:{
+							size:15
+						}
+					}
+				}
+			}
 		}
 	});
 }
